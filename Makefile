@@ -57,12 +57,12 @@ build-package@debian-wheezy:
 	echo "deb http://httpredir.debian.org/debian wheezy-backports main" > /etc/apt/sources.list.d/backports.list
 	apt-get update
 	apt-get build-dep --only-source -y supervisor/testing
-	cd ~ && apt-get -b source -y supervisor/testing
+	cd ~ && apt-get -b source --only-source -y supervisor/testing
 	mv ~/*.deb /srv/build/debian-wheezy
 
 build-package@debian-jessie:
 	echo "deb-src http://httpredir.debian.org/debian testing main contrib non-free" > /etc/apt/sources.list.d/testing.list
 	apt-get update
 	apt-get build-dep --only-source -y supervisor/testing
-	cd ~ && apt-get -b source -y supervisor/testing
+	cd ~ && apt-get -b source --only-source -y supervisor/testing
 	mv ~/*.deb /srv/build/debian-jessie
