@@ -1,4 +1,1 @@
-/build/debian-jessie/*
-!build/debian-jessie/.gitkeep
-/build/debian-wheezy/*
-!build/debian-wheezy/.gitkeep
+/build/
