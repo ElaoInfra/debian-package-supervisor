@@ -72,6 +72,6 @@ build-package@debian-jessie:
 	apt-get -y install devscripts
 	apt-get -y --only-source build-dep ${PACKAGE_NAME}/${PACKAGE_DISTRIBUTION}
 	cd ~ && apt-get -y --only-source source ${PACKAGE_NAME}/${PACKAGE_DISTRIBUTION}
-	cd ~ && cd ${PACKAGE_NAME}-${PACKAGE_VERSION} && DEBFULLNAME="${MAINTAINER_NAME}" DEBEMAIL="${MAINTAINER_EMAIL}" dch -v ${PACKAGE_VERSION}-${PACKAGE_REVISION}elao${PACKAGE_REVISION_ELAO}~jessie${PACKAGE_REVISION_WHEEZY} "Backport"
+	cd ~ && cd ${PACKAGE_NAME}-${PACKAGE_VERSION} && DEBFULLNAME="${MAINTAINER_NAME}" DEBEMAIL="${MAINTAINER_EMAIL}" dch -v ${PACKAGE_VERSION}-${PACKAGE_REVISION}elao${PACKAGE_REVISION_ELAO}~jessie${PACKAGE_REVISION_JESSIE} "Backport"
 	cd ~ && cd ${PACKAGE_NAME}-${PACKAGE_VERSION} && debuild -us -uc
 	mkdir -p /srv/build && mv ~/*.deb /srv/build
